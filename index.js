@@ -30,7 +30,7 @@ app.post('/chargeForAlex', async (request, response) => {
     order: {
       line_items: [
         {
-          name: "Pay Alex Ko $1.01",
+          name: "Pay Alex Ko $1.01 🐞",
           quantity: "1",
           base_price_money: {
             amount: 101,
