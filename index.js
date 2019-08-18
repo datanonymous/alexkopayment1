@@ -20,7 +20,7 @@ const transactionsApi = new TransactionsApi();
 const ordersApi = new OrdersApi();
 const locationsApi = new LocationsApi();
 
-app.post('/chargeForCookie', async (request, response) => {
+app.post('/chargeForAlex', async (request, response) => {
   const requestBody = request.body;
   const locations = await locationsApi.listLocations();
   const locationId = locations.locations[0].id;
@@ -33,7 +33,7 @@ app.post('/chargeForCookie', async (request, response) => {
           name: "Pay Alex Ko $5.00",
           quantity: "1",
           base_price_money: {
-            amount: 500,
+            amount: 100,
             currency: "USD"
           }
         }
