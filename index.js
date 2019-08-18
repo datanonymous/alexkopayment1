@@ -20,6 +20,8 @@ const transactionsApi = new TransactionsApi();
 const ordersApi = new OrdersApi();
 const locationsApi = new LocationsApi();
 
+
+
 app.post('/chargeForAlex', async (request, response) => {
   const requestBody = request.body;
   const locations = await locationsApi.listLocations();
@@ -41,35 +43,7 @@ app.post('/chargeForAlex', async (request, response) => {
     }
   }
   
-  
-  
-  
-  
-  //See if I can add this to position two separate charges in the same app
-  app.post('/chargeForAlex501', async (request, response) => {
-  const requestBody = request.body;
-  const locations = await locationsApi.listLocations();
-  const locationId = locations.locations[0].id;
 
-  const createOrderRequest = {
-    idempotency_key: crypto.randomBytes(12).toString('hex'),
-    order: {
-      line_items: [
-        {
-          name: "Pay Alex Ko $5.01 🐞",
-          quantity: "1",
-          base_price_money: {
-            amount: 501,
-            currency: "USD"
-          }
-        }
-      ]
-    }
-  }
-  
-  
-  
-  
 
   const order = await ordersApi.createOrder(locationId, createOrderRequest);
 
