@@ -115,6 +115,9 @@ const listener = app.listen(process.env.PORT, function() {
 
 //HOW DO I GET THIS TO .POST MULTIPLE ITEMS?
 ////////////////////////////////////////////////////////////////////////////////////////////////
+//error
+//https://dashboard.heroku.com/apps/alexkopayment1/logs
+//2019-09-10T22:34:18.758775+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path="/charge5dollars" host=alexkopayment1.herokuapp.com request_id=b4b2249c-fd6c-47ff-aa01-20e466655e6c fwd="75.189.195.253" dyno= connect= service= status=503 bytes= protocol=https
 
 
 
