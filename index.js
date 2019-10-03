@@ -1,3 +1,6 @@
+//https://nodejs.org/dist/latest-v10.x/docs/api/fs.html
+//https://github.com/datanonymous/alexkopayment1/blob/master/index.js
+
 const express = require('express');
 const app = express();
 const SquareConnect = require('square-connect');
@@ -56,7 +59,7 @@ app.post('/chargeForAlex', async (request, response) => {
     };
     const transaction = await transactionsApi.charge(locationId, chargeBody);
     console.log(transaction.transaction);
-
+ 
     response.status(200).json(transaction.transaction);
   } catch (e) {
     delete e.response.req.headers;
@@ -106,10 +109,10 @@ app.post('/chargeForAlex', async (request, response) => {
   }
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+// // listen for requests :)
+// const listener = app.listen(process.env.PORT, function() {
+//   console.log('Your app is listening on port ' + listener.address().port);
+// });
 
 
 
@@ -141,8 +144,6 @@ app.post('/charge5dollars', async (request, response) => {
       ]
     }
   }
-  
-  
   
   const order = await ordersApi.createOrder(locationId, createOrderRequest);
 
@@ -207,8 +208,8 @@ app.post('/charge5dollars', async (request, response) => {
   }
 });
 
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
-
